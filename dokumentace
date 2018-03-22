@@ -1,0 +1,39 @@
+BOX
+    possible_values - na zacatku [1 .. 9]
+    value - na zacatku = 0
+    ---
+    zapis_hodnotu(n) --> possible_values = [n], value = n
+    odeber_poss_value(n) --> odebere z poss_values n a pokud uz tam nic nezbyde a zaroven not value, zavola error
+
+
+FIELD
+    field - pole boxů
+    ---
+    nacti_vstup(vstup) - naplni field cisly ze zadani
+    vytiskni - vytiskne se
+
+
+AREA
+    field - pole boxů patřících do oblasti
+
+
+    seled = 0, dokud vsechny boxy nemají svou hodnotu
+
+    CONDITION1 - pokud je nekde cislo, nebude uz nikde jinde
+    CONDITION2 - pokud je cislo mozne vepsat jen na jedno misto, pak je prave tam
+
+    CONDITION1 (number)
+        vrati jednicku, pokud je co vyskrtat, jinak vrati 0
+
+    CONDITION2 (number)
+        vrati box, kam jde zapsat nebo 0
+
+*****
+zapiseme cislo
+	na vsechny oblasti, ktere obsahuji to cislo
+		if cond1, sezn = cond1
+			for b in sezn:
+				odeber cislo z b
+				pokud zbyde jen jedna poss value
+                                    zapiseme cislo a konej
+
